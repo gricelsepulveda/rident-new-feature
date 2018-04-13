@@ -1,0 +1,57 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h4.rdnt-h4-partners {
+  color: $color-2;
+  background-color: $white; 
+  box-sizing: border-box;
+  padding: 10px 20px 10px 40px;
+  font: {
+    size: 16px;
+    weight: 500;
+  } 
+  text-align: center;
+}
+
+section.rdnt-partners {
+  width: 100%;
+  min-height: 600px; 
+  box-sizing: border-box;
+  padding: 40px 20px 20px 40px;
+  background-color: $color-2;
+  //ROTATOR
+  .rdnt-partners-rotator {
+    width: 50%;
+    height: auto;
+    border: 1px solid white;
+    overflow-x: hidden;
+    .rdnt-rotator-box {
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center; 
+      //BRAND
+      .rdnt-partner-brand-box {
+        .rdnt-partner-brand {
+          width: 100px;
+          height: 100px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          background-color: $white;
+          border-radius: 100%;
+          img {
+            max-width: 64px;
+            max-height: 64px;
+          }
+        }
+      }
+    }
+  }
+}
