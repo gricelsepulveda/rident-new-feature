@@ -105,8 +105,6 @@ $(document).ready(function(){
     $(textShow).addClass('active');
   });
 
-  
-
   function brandRotator(){
 
     //IF ITEMS ARE 4 OR LESS WIDTH IS DEFAULT
@@ -121,23 +119,18 @@ $(document).ready(function(){
       $('.rdnt-rotator-box-img').width(finalWidth);
     }
 
+
+    //ROTATE
     var items = $('.rdnt-partner-brand-box:last-of-type').index();
     var timesRotator = (items / 4);
-    var timesRotatorFinal = Math.ceil(timesRotator) - 1;
-    
-    console.log(timesRotator);
-    console.log(timesRotatorFinal);
+    var timesRotatorFinal = Math.ceil(timesRotator);
 
     var i;
-
-    for (i = 0; i < timesRotatorFinal; i++) {
+    for (i = 0; i > timesRotatorFinal; i++) {
       $('.rdnt-rotator-box-img').animate({marginLeft: '-480px'}, 500);
     }
-  
+    
   }
-
-
-  setInterval(brandRotator, 2000); 
-
-
+  brandRotator();
 });
+
