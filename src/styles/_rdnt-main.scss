@@ -27,29 +27,60 @@ section.rdnt-partners {
   position: relative;
   background: {
     color: $color-2;
-    image: url('../assets/img/handshake.jpg');
-    blend-mode: soft-light;
-    size: auto 100%;
-    position: -60%;
-    repeat: no-repeat;
   }
-  .rdnt-partners-line {
-    width: 20%;
+  @media #{$sm} {
+    background: {
+      image: url('../assets/img/handshake.jpg');
+      blend-mode: soft-light;
+      size: cover;
+      position: top center;
+      repeat: no-repeat;
+    }
+    justify-content: center;
+  }
+  .rdnt-partners-desktop-img {
+    display: inline-block;
+    width: 50%;
     height: 100%;
+    background: {
+      image: url('../assets/img/handshake.jpg');
+      blend-mode: soft-light;
+      size: cover;
+      position: top center;
+      repeat: no-repeat;
+      color: $color-2;
+    }
     position: absolute;
-    top: 0px;
-    left: calc(50% - 20%);
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,2f73b8+49,2f73b8+100&0+0,1+49,1+100 */
-    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(47,115,184,1) 49%, rgba(47,115,184,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(47,115,184,1) 49%,rgba(47,115,184,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(47,115,184,1) 49%,rgba(47,115,184,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#2f73b8',GradientType=1 ); /* IE6-9 */
+    top: 0;
+    left: 0;
+    @media #{$sm} {
+      display: none;
+    }
   }
   //ROTATOR
   .rdnt-partners-rotator {
     margin-left: 50%;
     width: 50%;
     height: auto;
+    @media #{$sm} {
+      margin-left: 0%;
+      width: 100%;
+    }
+    .rdnt-partners-line {
+      width: 20%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: calc(50% - 10%);
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,2f73b8+49,2f73b8+100&0+0,1+49,1+100 */
+      background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(47,115,184,1) 49%, rgba(47,115,184,1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(47,115,184,1) 49%,rgba(47,115,184,1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(47,115,184,1) 49%,rgba(47,115,184,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#2f73b8',GradientType=1 ); /* IE6-9 */
+      @media #{$sm}{
+        display: none;
+      }
+    }
     //ROTATOR IMAGES
     .rdnt-rotator-box-img-wrapper {
       width: auto;
@@ -59,6 +90,9 @@ section.rdnt-partners {
       margin: 0 auto;
       position: relative;
       overflow: hidden;
+      @media #{$sm}{
+        max-width: 320px;
+      }
       .rdnt-rotator-box-img {
         width: auto;
         height: 120px;
@@ -67,6 +101,9 @@ section.rdnt-partners {
         justify-content: flex-start;
         align-items: flex-start; 
         cursor: pointer;
+        @media #{$sm}{
+          height: 80px;
+        }
         //BRAND
         .rdnt-partner-brand-box {
           margin-right: 10px;
@@ -102,10 +139,19 @@ section.rdnt-partners {
             align-items: center;
             background-color: $white;
             border-radius: 100%;
+            @media #{$sm}{
+              width: 60px;
+              height: 60px;
+            }
             img {
               max-width: 64px;
               max-height: 64px;
+              @media #{$sm}{
+                max-width: 48px;
+                max-height: 48px;
+              }
             }
+
           }
         }
       }
