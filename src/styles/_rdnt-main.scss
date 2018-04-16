@@ -22,34 +22,93 @@ section.rdnt-partners {
   background-color: $color-2;
   //ROTATOR
   .rdnt-partners-rotator {
+    margin-left: 50%;
     width: 50%;
     height: auto;
-    border: 1px solid white;
-    overflow-x: hidden;
-    .rdnt-rotator-box {
+    //ROTATOR IMAGES
+    .rdnt-rotator-box-img-wrapper {
       width: auto;
+      max-width: 480px;
       height: auto;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-content: center;
-      align-items: center; 
-      //BRAND
-      .rdnt-partner-brand-box {
-        .rdnt-partner-brand {
-          width: 100px;
-          height: 100px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-content: center;
-          align-items: center;
-          background-color: $white;
-          border-radius: 100%;
-          img {
-            max-width: 64px;
-            max-height: 64px;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      .rdnt-rotator-box-img {
+        width: auto;
+        max-width: 480px;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start; 
+        overflow-x: hidden;
+        //BRAND
+        .rdnt-partner-brand-box {
+          margin-right: 10px;
+          margin-left: 10px;
+          position: relative;
+          @include rdnt-animate;
+          &:after {
+            display: none;
+            @include rdnt-animate;
           }
+          &.active {
+            &:after {
+              @include rdnt-animate;
+              display: inline-block;
+              position: absolute;
+              bottom: -20px;
+              left: calc(50% - 9px);
+              width: 0; 
+              height: 0; 
+              border-left: 9px solid transparent;
+              border-right: 9px solid transparent;
+              border-top: 9px solid rgba(white, 0.25);
+              content: '';
+            }
+          }
+          .rdnt-partner-brand {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            background-color: $white;
+            border-radius: 100%;
+            img {
+              max-width: 64px;
+              max-height: 64px;
+            }
+          }
+        }
+      }
+    }
+    //TEXT ROTATOR
+    .rdnt-rotator-box-text-wrapper {
+      box-sizing: border-box;
+      margin: 0 auto;
+      position: relative;
+      display: block;
+      width: 480px;
+      max-width: 480px;
+      margin-top: 20px;
+      overflow-x: hidden;
+      .rdnt-rotator-box-text {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        //BRAND TEXT
+        .rdnt-brand-text {
+          width: 480px;
+          min-width: 480px;
+          max-width: 480px;
+          height: auto;
+          @include rdnt-animate;
         }
       }
     }
