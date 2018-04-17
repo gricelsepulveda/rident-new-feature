@@ -96,6 +96,12 @@ function closeContactSent(){
 $(document).ready(function(){
 
 
+  //ACTIVE VENUES 
+  $('.rdnt-new-nav-venues-li').click(function(){
+    $('.rdnt-new-nav-venues-li').removeClass('active');
+    $(this).addClass('active');
+  })
+
   $('.rdnt-partner-brand-box').click(function(){
     //MOVE ACTIVE INDICATOR
     $('.rdnt-partner-brand-box').removeClass('active');
