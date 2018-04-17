@@ -217,3 +217,225 @@ section.rdnt-partners {
     }
   }
 }
+
+//VENUES NAV
+
+nav.rdnt-new-nav-venues{
+  @include rdnt-clean-ahref;
+  @include rdnt-clean-list;
+  background-color: $color-1;
+  box-sizing: border-box;
+  padding: 0px 20px 0px 20px!important;
+  max-height: 70px;
+  margin-top: 200px;//ERASE
+  @media #{$sm} {
+    max-height: initial;
+    padding: 0px 0px 60px 0px!important;
+    position: relative;
+  }
+  p.rdnt-new-nav-venues-title  {
+    display: none;
+    @media #{$sm}{
+      display: block;
+      text-align: center;
+      font: {
+        size: 14px;
+        weight: 300;
+      }
+      padding-top: 20px!important;
+      margin-bottom: 10px;
+      color: $white;
+    }
+  }
+  ul.rdnt-new-nav-venues-ul {
+    @include rdnt-clean-ahref;
+    @include rdnt-clean-list;
+    @include rdnt-clean-webkit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    @media #{$sm} {
+      flex-wrap: wrap;
+    }
+    li.rdnt-new-nav-venues-li {
+      max-width: 240px;
+      box-sizing: border-box;
+      @include rdnt-clean-ahref;
+      @include rdnt-clean-list;
+      @include rdnt-clean-webkit;
+      padding: 10px!important;
+      margin-left: 10px!important;
+      margin-right: 10px!important;
+      @media #{$sm} {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+        max-width: initial;
+        position: relative;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin: 5px!important;
+      }
+      h2.rdnt-new-nav-h2 {
+        color: $white;
+        font: {
+          size: 18px;
+          weight: 300;
+        }
+        text: {
+          align: center;
+          transform: capitalize;
+        }
+        @media #{$sm}{
+          text-align: right;
+        }
+      }    
+      p.rdnt-new-nav-p {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: flex-start;
+        color: $white;
+        position: relative;
+        font: {
+          size: 12px;
+          weight: 400;
+        }
+        display: none;
+        @media #{$sm} {
+          display: flex;
+        }
+        a.rdnt-new-nav-a {
+          color: $white;
+          text-decoration: none;
+          font: {
+            size: 12px;
+            weight: 400;
+          }
+          img {
+            margin-right: 5px;
+            @media #{$sm} {
+              margin-right: 0px;
+            }
+          }
+          @media #{$sm} {
+            display: none;
+            &.img {
+              width: 42px;
+              height: 42px;
+              flex-direction: row;
+              justify-content: center;
+              align-content: center;
+              align-items: center;
+              background-color: $color-2;
+              position: absolute;
+              top: 0px;
+              &.tel {
+                left: 0px;
+                border-right: 1px solid rgba($white, 0.25);
+              }
+              &.mail {
+                left: 42px;
+              }
+              &.location {
+                left: 84px;
+                border-right: 1px solid rgba($white, 0.25);
+              }
+              img {
+                height: 18px;
+              }
+            }
+          }
+        }
+        span.rdnt-joiner {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          flex-wrap: nowrap; 
+          @media #{$sm} {
+            display: none;
+          }
+          a.rdnt-new-nav-a {
+            color: $white;
+            text-decoration: none;
+            font: {
+              size: 12px;
+              weight: 400;
+            }
+            img {
+              margin-right: 5px;
+            }
+            &:first-of-type {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+      &.active {
+        border-radius: 10px 10px 0px 0px;
+        margin-top: -100%!important;
+        @media #{$sm} {
+          margin-top: 0px!important;
+          border-radius: initial;
+          padding-left: 136px!important;
+          border: 0px;
+          width: 100%;
+          margin-right: 0px!important;
+          margin-left: 0px!important;
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          a.rdnt-new-nav-a.img {
+            display: flex;
+          }
+        }
+        p.rdnt-new-nav-p {
+          display: flex;
+          @media #{$sm}{
+            display: flex;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+          }
+        }
+        h2.rdnt-new-nav-h2 {
+          text-transform: uppercase;
+          @media #{$sm}{
+            text-align: left;
+            margin-left: 10px;
+          }
+        }
+        &:nth-of-type(1){
+          background-color: $color-4;
+        }
+        &:nth-of-type(2){
+          background-color: $color-5;
+        }
+        &:nth-of-type(3){
+          background-color: $color-3;
+        }
+        &:nth-of-type(4){
+          background-color: $color-2;
+        }
+        &:nth-of-type(5){
+          background-color: $color-6;
+        }
+        &:nth-of-type(6){
+          background-color: $color-4;
+        }
+        &:nth-of-type(7){
+          background-color: $color-5;
+        }
+        &:nth-of-type(8){
+          background-color: $color-3;
+        }
+        &:nth-of-type(9){
+          background-color: $color-2;
+        }
+        &:nth-of-type(10){
+          background-color: $color-6;
+        }
+      }
+    }
+  }
+}
