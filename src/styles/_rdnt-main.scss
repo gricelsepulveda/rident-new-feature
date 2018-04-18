@@ -490,6 +490,172 @@ nav.rdnt-new-nav-venues{
   }
 }
 
+// NEW VENUES SECTION
+section#venues-new.rdnt-venues-new-section {
+  display: block;
+  position: relative;
+  .rdnt-venues-new-section-venue {
+    display: none;
+    flex-direction: row;
+    min-height: 600px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 0;
+    background: white;
+    @include rdnt-animate;
+    @media #{$sm}{
+      flex-direction: column-reverse;
+      min-height: initial;
+    }
+    &.active {
+      display: flex;
+      z-index: 1;
+    }
+    article.rdnt-venues-new-section-article {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      width: 50%;
+      position: relative;
+      @media #{$sm}{
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+      }
+      span.rdnt-venues-new-section-span {
+        display: block;
+        margin-bottom: 40px;
+        color: $color-6;
+        font: {
+          family: 'Lato', sans-serif;
+          size: 18px;
+          weight: 300;
+        }
+        text-align: center;
+        @media #{$sm}{
+          margin-bottom: 5px;
+        }
+      }
+      h1.rndt-venues-new-section-h1 {
+        display: block;
+        margin-bottom: 20px;
+        color: $color-2;
+        font: {
+          family: 'Lato', sans-serif;
+          size: 32px;
+          weight: 600;
+        }
+        text-align: center;
+        text-transform: capitalize;
+      }
+      .rdnt-venues-new-section-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        a, a:hover, a:focus, a:visited {
+          color: $color-6;
+          font: {
+            family: 'Lato', sans-serif;
+            size: 14px;
+            weight: 400;
+          }
+          text: {
+            align: center;
+            decoration: none;
+          }
+          span {
+            color: $color-6;
+            font: {
+              family: 'Lato', sans-serif;
+              size: 14px;
+              weight: 600;
+            }
+            text: {
+              align: center;
+              decoration: none;
+            }
+          }
+        }
+        .rdnt-joiner {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          @media #{$sm}{
+            flex-direction: column;
+          }
+          span {
+            color: $color-6;
+            margin-right: 5px;
+            &:last-of-type{
+              margin-right: 0px;
+            }
+            font: {
+              family: 'Lato', sans-serif;
+              size: 14px;
+              weight: 600;
+            }
+            text: {
+              align: center;
+              decoration: none;
+            }
+            a {
+              color: $color-6;
+              font: {
+                family: 'Lato', sans-serif;
+                size: 14px;
+                weight: 400;
+              }
+              text: {
+                align: center;
+                decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    article.rdnt-venues-new-section-image {
+      width: 50%;
+      min-height: 600px;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+      background: {
+        color: gray;
+        image: url('http://placekitten.com/1000/1000');
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+      }
+      @media #{$sm}{
+        min-height: 300px;
+        height: auto;
+        width: 100%;
+      }
+      img {
+        height: calc(100% + 4px);
+        width: auto;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        @media #{$sm}{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
 //MODAL 
 
 .rdnt-venue-new-modal-bg {

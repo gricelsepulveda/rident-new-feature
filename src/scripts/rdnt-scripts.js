@@ -100,6 +100,10 @@ $(document).ready(function(){
   $('.rdnt-new-nav-venues-li').click(function(){
     $('.rdnt-new-nav-venues-li').removeClass('active');
     $(this).addClass('active');
+    var activeTab = $(this).index() + 1;
+    var activateVenue = $('.rdnt-venues-new-section-venue:nth-of-type(' + activeTab + ')')
+    $(".rdnt-venues-new-section-venue").removeClass('active');
+    $(activateVenue).addClass('active');
   })
 
   $('.rdnt-partner-brand-box').click(function(){
