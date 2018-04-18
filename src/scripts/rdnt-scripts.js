@@ -176,3 +176,13 @@ $(document).ready(function(){
   }
   setInterval(moveBrands, 5000);
 });
+
+function closeNewVenueSelectionModal(){
+  $(".rdnt-venue-new-modal-bg").fadeOut("slow");
+  $(".venue-selection-new-modal").addClass("display-none");
+}
+
+function closeNewVenueSelectionReserveModal(){
+  $(".rdnt-venue-new-modal-bg").fadeOut("slow");
+  $(".reserve-modal").addClass("display-none");
+}
