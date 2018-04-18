@@ -94,17 +94,48 @@ function closeContactSent(){
 }
 
 $(document).ready(function(){
+  function moveVenues() {
+    if ( window.outerWidth > 480 ) {
+      var activeVenue = $('.rdnt-venues-new-section-venue.active');
+      var lastVenueCount = $('.rdnt-venues-new-section-venue:last-of-type').index();
 
+      if ( activeVenue.index() != lastVenueCount ) {
+        $('.rdnt-venues-new-section-venue').removeClass('active');
+        $(activeVenue).next().addClass('active');
+
+        //CHANGE TAB
+        $('.rdnt-new-nav-venues-li').removeClass('active');
+        var activateTab = activeVenue.index() + 2;
+        var tab = $('.rdnt-new-nav-venues-li:nth-of-type(' + activateTab + ')');
+        
+        $(tab).addClass('active');
+
+      }
+      else {
+        $('.rdnt-venues-new-section-venue').removeClass('active');
+        $('.rdnt-venues-new-section-venue:first-of-type').addClass('active');
+        //CHANGE TAB
+        $('.rdnt-new-nav-venues-li').removeClass('active');
+        $('.rdnt-new-nav-venues-li:first-of-type').addClass('active');
+      }
+    }
+  }
+  var createInterval = function() { return setInterval(moveVenues, 2000) };
+  var moveVenuesTimer = createInterval();
+  moveVenuesTimer;
 
   //ACTIVE VENUES 
   $('.rdnt-new-nav-venues-li').click(function(){
+    clearInterval(moveVenuesTimer);
     $('.rdnt-new-nav-venues-li').removeClass('active');
     $(this).addClass('active');
     var activeTab = $(this).index() + 1;
     var activateVenue = $('.rdnt-venues-new-section-venue:nth-of-type(' + activeTab + ')')
     $(".rdnt-venues-new-section-venue").removeClass('active');
     $(activateVenue).addClass('active');
+    moveVenuesTimer = createInterval();
   })
+  
 
   $('.rdnt-partner-brand-box').click(function(){
     //MOVE ACTIVE INDICATOR
@@ -152,6 +183,8 @@ $(document).ready(function(){
       $('.rdnt-rotator-box-img').animate({marginLeft: '0px'});
     });
   }*/ 
+
+
 
   function moveBrands() {
     //GET THE MAGIC NUMBERS
